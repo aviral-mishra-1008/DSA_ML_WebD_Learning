@@ -1,29 +1,10 @@
-num = int(input("Enter number: "))
-num = num-2*num
-i = 0
-bina = 0
-while num!=0:
-    rem = num%2
-    if rem==0:
-        rem=1
-    elif rem==1:
-        rem=0
-    num = num>>1
-    bina = bina+10**i*rem
-    i+=1
-iny = "1"*(32-i)
-bina =iny+str(bina)
-for i in range(-1,-32,-1):
-    if bina[i]=="1":
-        bina.replace(bina[i],"0")
-        print('yes')
-    elif i=="0":
-        bina.replace(bina[i],"1")
-        break
-    print(bina)
-print(int(bina))
-
-
-        
-
-    
+import numpy as np
+nums = [1,2,3,4,5,6,7]
+target = 9
+arr = np.array(nums)
+for i in range(len(arr)):
+    arr1 = arr + arr[i]
+    if target in arr1:
+        x = np.where(arr1==target)[0][0]
+        print([i,x])
+        break;
