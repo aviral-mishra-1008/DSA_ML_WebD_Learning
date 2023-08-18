@@ -2,6 +2,40 @@
 #include <limits.h>
 using namespace std;
 
+void print(int arr[], int n){
+    cout<<"[";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<"]";
+}
+
+void reverse(int arr[], int n){
+    int start = 0;
+    int end = n-1;
+    for(start,end; start<end; start++, end--){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
+}
+
+int len(int arr[]){
+    int length = sizeof(arr)/sizeof(arr[0]);
+    return length;
+}
+
+int lin_search(int arr[], int size, int key){
+    int found = 0;
+    for(int i=0; i<size; i++){
+        if(arr[i]==key){
+            found =  1;
+        }
+    }
+    return found;
+}
+
+
 int Max(int num[], int n){
     int max  = INT_MIN;
 
@@ -23,19 +57,4 @@ int Min(int num[], int n){
     }
     return min;
 }
-
-int main(){
-    int size;
-    cin>> size;
-    // int num[size]; //This is not a good practice...never use this method to place variable in array[size]..size must be always deterministic
-    int num[100]; //better method, bhale 10 input lena ho aur jyada ka bana do lekin kabhi bhi upar wala method use nahi krna 
-    for(int i=0; i<size; i++){
-        cout<<"Enter number: ";
-        cin>>num[i];
-    }
-    return 0;
-}
-
-//Maximum and minimum ke liye ek function hota max(var1, var2) so it returns the variable that has more length!
-//Same goes for min(var1, var2)
 
