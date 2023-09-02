@@ -16,7 +16,7 @@ int main(){
         int x = i;
         for(int j=i+1; j<n; j++){
             if(arr[x]>arr[j]){
-                x = j;  //kafi simple logic hai ! dost!
+                x = j;  //kafi simple logic hai! dost!
             }
         }
         swap(arr[i],arr[x]);
