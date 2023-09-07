@@ -1,5 +1,6 @@
 //Now let's try to understand the STL and see what are various containers and algorithms and functions of STL
 #include <bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 
 
@@ -264,14 +265,84 @@ int main(){
         cout<<*it<<" ";
     } cout<<endl;   //so find returns the pointer to the element 5 and see *ptr krke humne nikal liya elements!
 
-     
 
+//Maps
+    //This is like dictionary in python and here the keys are pointing to values and one key points only to a particular value and not to all
 
+    map<int, string> map;
 
-
+    map[1] = "Aviral";
+    map[4] = "Vikramaditya";
+    map[21] = "Ojha";
+    map[5] = "Arnava";  
     
+    for(auto i:map){
+        cout<<i.first<<"  "<<i.second<<endl;  //This is the procedure i.first to display the keys, and as you can see the output is always ordered i.e ascending 
+    }
 
+    map.insert({7,"Shubhi"});
+    cout<<"Finding 7 -> "<<map.count(7)<<endl; //checking for a key
+
+    //now let's try to see how to erase elements
+
+    map.erase(21);
+    cout<<"After erasing: "<<endl;
+     for(auto i:map){
+        cout<<i.first<<endl;  //This is the procedure i.first to display the keys, and as you can see the output is always ordered i.e ascending 
+    }
+
+    //the complexity is O(log n) in case of this map because this one is implemented by random black tree and balance tree but in unordered map the implementation is via hashmaps and complexity is O(1) 
+
+    auto it = map.find(7);
+
+    for(auto i=it; i!=map.end(); i++){
+        cout<<(*i).first<<endl;
+    }
+
+    //codewise the unordered map and unordered set are similar to the previous ones, but they are faster, unordered i.e unsorted
+
+//ALGORITHMS IN STL
+    //These are prebuilt functions 
+    //Include <algorithm>
+
+    vector<int> rv;
+    rv.push_back(3);
+    rv.push_back(6);
+    rv.push_back(7);
+    rv.push_back(8);
+
+    cout<<"We're trying to find 7: "<<binary_search(rv.begin(), rv.end(), 7)<<endl;
+
+    // cout<<"Uppper bound: "<<upper_bound(rv.begin(), rv.end(), 6);
+    // cout<<"Lower bound: "<<lower_bound(rv.begin(), rv.end(), 6);
+    //This returns an iterator and 2,3 respectively
+
+
+    //You have already used Swap, Min, Max, sort etc;
+
+    //reverse is another interesting function
+    string abcd = "abcd";
+    cout<<abcd<<endl;
+    reverse(abcd.begin(), abcd.end());
+
+    cout<<abcd<<endl;
+
+   for(auto i:rv){
+        cout<<i<<" ";
+    } cout<<endl;
+    //rotating vectors or arrays
+    //You need to tell start, how many elements you wanna rotate, end?
+
+    rotate(rv.begin(), rv.begin()+2, rv.end());
+    for(auto i:rv){
+        cout<<i<<" ";
+    } cout<<endl;
     return 0;
     }
+
+    //sort has already been used and it works on intro sort which is combo of three algorithms quick sort, heap sort and insertion sort
+
+    //that's the end of STL knowledge!!
+    //PEACE!
 
 
