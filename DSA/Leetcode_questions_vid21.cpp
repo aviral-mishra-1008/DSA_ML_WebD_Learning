@@ -51,10 +51,10 @@ int main(){
     vector<int> ct;
     ct.push_back(4);
     ct.push_back(5);
-    ct.push_back(1);
+    // ct.push_back(1);
 
     int x = sum(rt,3);
-    int y = sum(ct,3);
+    int y = sum(ct,2);
     int s = x+y;
     vector<int> d = numVec(s);
     cout<<x<<endl;
