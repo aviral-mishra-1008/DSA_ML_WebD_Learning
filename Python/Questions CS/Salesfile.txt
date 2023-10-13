@@ -1,0 +1,5 @@
+Name	Q1 Sales	Q2 Sales	Q3 Sales	Q4 Sales	Remarks
+Lakshya	6000	7000	8000	10000	Good
+Pranshu	7000	6500	9000	4000	buck up
+Kashish Sen 	6500	4300	5600	7200	Fine
+ayush verma	80	1080	10080	100090	it fine but needs improvement 
