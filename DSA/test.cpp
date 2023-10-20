@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-
-void print(int arr[], int n){
-    cout<<"[";
+void print(int arr[][2], int n, int m){
     for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+        for(int j =0; j<m; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
     }
-    cout<<"]";
 }
+
 
 int main(){
     // int arr[6] = {1,2,2,3,3,3};
@@ -37,7 +38,12 @@ int main(){
     // }
     //     }
     // print(arr2,6);
-    char ch = 49;
-    cout<<ch;
+    // char ch = 49;
+    int arr[2][2] = {{1,2},{3,4}};
+    int temp = arr[]
+    print(arr, 2,2);
+    arr[0][0] = 11;
+    cout<<endl;
+    print(arr, 2,2);
 
 }
