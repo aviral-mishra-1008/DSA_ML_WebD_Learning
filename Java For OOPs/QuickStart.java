@@ -10,9 +10,9 @@ public class QuickStart { //hey java thisnis project/file names
         //Variables
         String Name = "Aviral"; //datatype batana padta then we can place the value, so var holds pointer to Name and value that resides in it
 
-        int age = 19;
-        String friend = "Ayushman";
-        String teammate = friend; //assignement is possible!
+        // int age = 19;
+        // String friend = "Ayushman";
+        // String teammate = friend; //assignement is possible!
 
         //Datatypes: i)Primitive ii)Non Primitive
         //Primitive types
@@ -25,10 +25,10 @@ public class QuickStart { //hey java thisnis project/file names
             //char - 2  byte
             //boolean - 1 bit
             //We must never exceed limit
-        byte age2 = 30;
-        int phone = 1234567890;
-        long phone2 = 12345678900L; //L implies the long number!
-        float pi = 3.14F; //so we need to write such letters to tell java its which type float/double/long/short etc
+        // byte age2 = 30;
+        // int phone = 1234567890;
+        // long phone2 = 12345678900L; //L implies the long number!
+        // float pi = 3.14F; //so we need to write such letters to tell java its which type float/double/long/short etc
 
         //NON PRIMITIVE DATA-TYPE
             //Strings
@@ -78,7 +78,7 @@ public class QuickStart { //hey java thisnis project/file names
         System.out.println(marks[0]);
 
         //another way
-        int[] marks2 = {32,44,21};
+        // int[] marks2 = {32,44,21};
 
         //CASTING
         //When we try to convert a small space datatype to a larger one it gets converted easily as there's no sign of an information loss. 
@@ -95,12 +95,14 @@ public class QuickStart { //hey java thisnis project/file names
 
         //establishing constants
         int afe = 18;
+        System.out.println(afe);
         afe = 11;
         afe = 15; //value can change
 
         //but if we use final keyword so its a final
         
         final int CR = 4;  //its a convention to write constants with capital letters
+        System.out.println(CR);
 
 
         //Operators
@@ -142,7 +144,7 @@ public class QuickStart { //hey java thisnis project/file names
 
 
         //SWITCH CASES
-
+        sc.close();
         int day  = 1;
         switch(day){
             case 1 : 
@@ -179,7 +181,7 @@ public class QuickStart { //hey java thisnis project/file names
         //EXCEPTION HANDLING  i.e TRY-EXCEPT OF PYTHON 
         //CALLED TRY AND CATCH
 
-        int[] marks = {11,22,113,21};
+        // int[] marks = {11,22,113,21};
         try{
             System.out.println(marks[5]);
         }
@@ -187,6 +189,11 @@ public class QuickStart { //hey java thisnis project/file names
         catch(Exception exception){
             System.out.println("Index out of range buddy!");
         }
+
+
+        //FUNCTIONS IN JAVA
+        //Every class has methods which are basically functions
+        //example
 
 
     }
