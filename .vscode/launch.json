@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "QuickStart",
+      "request": "launch",
+      "mainClass": "QuickStart",
+      "projectName": "Programming Essentials Learnt_ece71d42"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "Programming Essentials Learnt_ece71d42"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
