@@ -22,3 +22,7 @@ console.log(arr.length);  //functions/methods require () properties don't!
 //sort() sorts th elements in alphabetic and ascending order
 // slice() selects part of ana array and return new array
 
+
+//there are some adavanced features as well
+
+
