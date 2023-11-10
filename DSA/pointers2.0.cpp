@@ -111,6 +111,15 @@ int main(){
    // both give same result
 
    // thus arr[i]=*(arr+i)
+   
+   
+   //********BENEFITS*******
 
+   //You can use this knowledge to send piece of array
+   //thus getSum(arr) sends entire array [1,2,3,4,5]
+   //but getSum(arr+3) sends [4,5] only
+   //so that helps!
+
+   
     return 0;
 }
