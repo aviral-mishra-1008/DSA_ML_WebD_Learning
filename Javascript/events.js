@@ -69,7 +69,7 @@ box1.addEventListener('click', ()=>{   //here usually there's no need to write o
 const cont = document.getElementById('container');
 box1.addEventListener('click', ()=>{   //here usually there's no need to write on, mosty learn as you use, here you don't need to write much code 
     console.log('clicked on container!');
-}, true)
+}, true) //place true for capture event always in the outermost parent function!
 
 //so basically the event when it happens, the eventlistener is able to detect and thus exescute the function specified. 
 //We don't actually need to place this explicitly in the HTML file rather it can be placed in the js file itself
