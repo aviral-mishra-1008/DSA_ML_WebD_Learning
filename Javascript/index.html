@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <title>
             Welcome!
         </title>    
@@ -7,15 +8,17 @@
 
     <body>
         <h1>WELCOME TO JAVASCRIPT INTRODUCTION !!</h1>
-<!-- YOU CAN EITHER DEFINE THE JS FILE CODE IN HERE!! -->
-        <script>
-            let c = 3;
-            let d = 2;
-            console.log(c+d);
-        </script>
 
+
+
+        <div class="container" id="container">
+            <div class="box" id="box-1" onclick="myFunc1()">box-1</div> <!--so basically here we used an event handler on click then gave it a function_name(), this basically means that this will go to the script added and search for the function in it and perform the task and also to get event handlers just type on the scroll!-->
+            <div class="box" id="box-2" onclick="myFunc2()">box-2</div>
+            <div class="box" id="box-3" onclick="myFunc3()">box-3</div>
+            <div class="box" id="box-4" onclick="myFunc4()">box-4</div>
+</div>
         <!-- OR YOU CAN ALSO ADD THE JS SRCIPT FILE BY CONNECTION  -->
-        <script src = "arrays.js">
+        <script src = "events.js">
 
         </script>
     </body>
