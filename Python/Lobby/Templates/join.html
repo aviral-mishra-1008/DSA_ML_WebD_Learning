@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join Room</title>
+    <style>
+        body {
+            background-image: url('https://i.makeagif.com/media/4-24-2017/xzMHOc.gif');
+            /* Additional CSS styles for background image */
+            /* You may add more styles or adjust them as needed */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #000000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Enter Room Code</h1>
+        <form action="/toLobby/" method="post">
+            {% csrf_token %}
+            <input type="text" id='roomID' name="roomID" placeholder="Enter Room Code" required>
+            <input type="hidden" name="username" value="ayushman"  id="username">
+            <br>
+            <button type="submit">Join Room</button>
+        </form>
+    </div>
+
+</body>
+</html>
