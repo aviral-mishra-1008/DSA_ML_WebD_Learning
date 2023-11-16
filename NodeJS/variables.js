@@ -11,6 +11,7 @@ console.log(__dirname);
 //setInterval is also there in node
 
 //setInterval executes the required code once every specified time
-setInterval(()=>{
-    console.log('Wow')
-},1000)
+
+// setInterval(()=>{
+//     console.log('Wow')
+// },1000)
