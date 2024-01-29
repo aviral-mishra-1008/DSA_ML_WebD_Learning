@@ -1,0 +1,196 @@
+    # print('Visited so far: ',visited)
+    # while found!=True:
+    #     winner = WinFinder(nodeI,nodeF)
+    #     if winner:
+    #         found=True
+    #         print('Winner Found!')
+
+    #     if Frontier.empty():
+    #         visited.pop()
+    #         return
+    #     node = Frontier.remove()
+    #     actions = LegalMoves(node)
+    #     print('Following are available actions: ',actions)
+    #     for action in actions:
+    #         print("Applying actions: ",action)
+    #         newNode = Result(node,action)
+    #         print('Which formed this state: ',newNode.state)
+    #         print('Now visited looks like: ',visited)
+    #         if newNode.state not in visited:
+    #             Frontier.add(newNode)
+    #             visited.append(newNode.state)
+    #             print('Going for a new recursive call')
+    #             findSol(newNode,nodeF,found,Frontier)
+    #             print()
+    #         else:
+    #             print("Invalid Actions Deemed")
+
+
+#OPT 2
+
+
+        if nodeI.state == nodeF.state:
+            print('Solution Found!')
+            # while nodeI.parent!=None:
+            #     solution.append(nodeI.state)
+            #     nodeI = nodeI.parent
+            # found = True
+            # solution.reverse()
+            # solution.append(i)
+
+    if Frontier.empty():
+        # exploredSet.pop()
+        return
+    
+    while found!=True:
+        node = Frontier.remove()
+        state = copy.deepcopy(node.state)
+        exploredSet.append(state)
+        moves = LegalMoves(node)
+        for i in moves:
+            print("Curr Node: ")
+            printSet(node.state)
+            newNode = Result(node,i)
+            if newNode.state not in exploredSet:
+                print('Action is: ',i)
+                print('Next Node: ')
+                printSet(newNode.state)
+                print("Going for recursive call")
+                print()
+                Frontier.add(newNode)
+                findSol(newNode,nodeF,found,Frontier,solution,exploredSet)
+
+
+#option 3
+# #Question1
+# import copy
+# class Node:
+#     def __init__(self,state,parent,action):
+#         self.state = state
+#         self.parent = parent 
+#         self.action = action
+
+
+# class StackFrontier():
+#     def __init__(self):
+#         self.frontier = []
+
+#     def add(self, node):
+#         self.frontier.append(node)
+
+#     def contains_state(self, state):
+#         return any(node.state == state for node in self.frontier)
+
+#     def empty(self):
+#         return len(self.frontier) == 0
+
+#     def Display(self):
+#         print(self.frontier)
+
+#     def remove(self):
+#         if self.empty():
+#             raise Exception("empty frontier")
+#         else:
+#             node = self.frontier[-1]
+#             self.frontier = self.frontier[:-1]
+#             return node
+
+# def findBlank(node):
+#     for i in range(2):
+#         if None in node.state[i]:
+#             ind = node.state[i].index(None)
+#             tup = (i,ind)
+#             return tup
+        
+# def printSet(state):
+#     print(state[0])
+#     print(state[1])
+#     # print(state[2])
+
+# def LegalMoves(node):
+#     legalMoves = []
+#     blank = findBlank(node)
+#     x,y = blank
+#     x1 = x-1 if x-1>=0 else None
+#     x2 = x+1 if x+1<2 else None
+#     y1 = y-1 if y-1>=0 else None
+#     y2 = y+1 if y+1<2 else None
+
+#     if(x1!=None):
+#         tup1 = (x1,y)
+#         legalMoves.append(tup1)
+#     if(x2!=None):
+#         tup2 = (x2,y)
+#         legalMoves.append(tup2)
+#     if(y1!=None):
+#         tup3 = (x,y1)
+#         legalMoves.append(tup3)
+#     if(y2!=None):
+#         tup4 = (x,y2)
+#         legalMoves.append(tup4)
+    
+#     return legalMoves
+
+
+# def Result(node,action):
+#     nxtState = copy.deepcopy(node.state)
+#     xN,yN = action
+#     x,y = findBlank(node)
+#     temp = nxtState[x][y]
+#     nxtState[x][y] = nxtState[xN][yN]
+#     nxtState[xN][yN] = temp
+#     newNode = Node(nxtState,node.state,action)
+#     return newNode
+
+# def WinFinder(node,goalState):
+#     currState = node.state
+#     goal = goalState.state
+#     for i in range(2):
+#         for j in range(2):
+#             if(currState[i][j]==goal[i][j]):
+#                 continue
+#             else:
+#                 return False
+#     return True
+
+
+
+# puzzle = [[1,2],
+#           [None,3]]
+# finalState = [[1,2],
+#               [3,None]]
+
+# nodeI = Node(puzzle,None,None)
+# nodeF = Node(finalState,None,None)
+
+
+# def findSol(nodeI,nodeF):
+#     Frontier = StackFrontier()
+#     Frontier.add(nodeI)
+#     exploredSet = []
+#     solution = []
+#     found = False
+#     while found!=True:
+#         Frontier.Display()
+#         node = Frontier.remove()
+
+#         if node.state == nodeF.state:
+#             found = True
+#             while node.parent is not None:
+#                 solution.append(node.state)
+#                 node = node.parent
+        
+#         state = copy.deepcopy(node.state)
+#         exploredSet.append(state)
+        
+#         moves = LegalMoves(node)
+#         print('Available moves: ',moves)
+#         for i in moves:
+#             print(Result(node,i).state)
+#             print('Explored: ',exploredSet)
+#             if Result(node,i).state not in exploredSet:
+#                 newNode = Result(node,i)
+#                 print("NewNode is : ",newNode)
+#                 Frontier.add(newNode)
+
+# findSol(nodeI,nodeF)
