@@ -1,0 +1,1 @@
+So The Code In this folder is written for GNUSim 8085 and works only on the platform and software!
