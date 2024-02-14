@@ -6,7 +6,7 @@
 #define BUFFER_SIZE 5
 
 int main(){
-    int fd = open("test.txt", O_RDONLY);
+    int fd = open("F1.txt", O_RDONLY);
     if(fd==-1){
         perror("Error loading the file F1!");
         close(fd);
@@ -26,7 +26,7 @@ int main(){
 
     close(fd);
 
-    int fd2 = open("result.txt", O_WRONLY | O_CREAT | O_TRUNC);
+    int fd2 = open("result.txt", O_WRONLY | O_CREAT | O_TRUNC, 0666);
     if(fd2==-1){
         perror("Error opening F2 ");
         close(fd2);
