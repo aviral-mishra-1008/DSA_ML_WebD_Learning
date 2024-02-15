@@ -20,11 +20,7 @@ void findPart(vector<vector<string>> &ans, vector<string> &parts, string s,int i
 
     for(int i=ind;i<s.size();i++){
         if(isPalindrome(s,i,ind)){
-            string sh = "";
-            for(int j=ind;j<=i;j++){
-                sh=sh+s[j];
-            }
-            parts.push_back(sh);
+            parts.push_back(s.substr(ind,i-ind+1)); //substr takes two params, initial index which is ind then number of characters to insert into substring that is i-ind+1
             findPart(ans,parts,s,i+1);
             parts.pop_back();
         }
@@ -34,7 +30,7 @@ void findPart(vector<vector<string>> &ans, vector<string> &parts, string s,int i
 int main(){
     vector<vector<string>> ans;
     vector<string> parts;
-    string s = "aabba";
+    string s = "aabb";
     int ind = 0;
     findPart(ans,parts,s,ind);
     for(auto i:ans){
