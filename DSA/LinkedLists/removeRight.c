@@ -8,11 +8,11 @@ typedef struct Node{
 }Node;
 
 void remRight(Node *head){
-    Node *prev=NULL;
+    Node *prev = NULL;
     Node *curr =head;
     Node *nxt = NULL;
 
-
+    prev = curr;
     nxt = curr->next;
 
     if(curr==NULL || nxt==NULL){
@@ -22,14 +22,29 @@ void remRight(Node *head){
         return;
     }
 
-    while(curr!=NULL){
-        prev = curr;
-        curr = nxt;
-        if(prev->data<curr->data){
-            prev->next = curr->next;
-            nxt = nxt->next;
-            free(curr);
+    while(nxt!=NULL){
+        if(curr->data<nxt->data){
+            if(prev==curr){
+                free(curr);
+                curr = nxt;
+                prev = nxt;
+                nxt = nxt->next;
+            }
+            else{
+                while(curr->data>nxt->data){
+                    free(curr);
+                    curr = nxt;
+                    nxt = nxt->next;
+                        }
+                prev->next = nxt;
+                curr = nxt;
+                prev = nxt;
+                nxt = nxt->next;
+            }
+        }
+        else{
             curr = nxt;
+            nxt = nxt->next;
         }
     }
     free(curr);
