@@ -22,41 +22,7 @@ void input(){
     }
 }
 
-
-void sort(){
-    int temp;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(bt[i]<bt[j]){
-                temp = bt[i];
-                bt[i] = bt[j];
-                bt[j] = temp;
-
-                temp = wt[i];
-                wt[i] = wt[j];
-                wt[j] = temp;
-
-                temp = tat[i];
-                tat[i] = tat[j];
-                tat[j] = temp;
-
-                temp = name[i];
-                name[i] = name[j];
-                name[j] = temp;
-
-                temp = finish[i];
-                finish[i] = finish[j];
-                finish[j] = temp;
-
-                temp = at[i];
-                at[i] = at[j];
-                at[j] = temp;
-            }
-        }
-    }
-}
-
-void sjf(){
+void fcfs(){
     for(int i=0;i<n;i++){
         finish[i] = 0;
         wt[i] = 0;
@@ -64,7 +30,6 @@ void sjf(){
     }
     int pending = n;
     for(time=0,count=0;pending>0;){
-        sort();
         for(count=0;count<n;count++){
             if(finish[count]!=1 && at[count]<=time){
                 printf(" P%d ",name[count]);
@@ -79,7 +44,6 @@ void sjf(){
                 wt[count]-=at[count];
                 tat[count] = wt[count]+bt[count];
                 finish[count]=1;
-                bt[count]+=999;
                 break;
             }
         }
@@ -89,7 +53,7 @@ void sjf(){
 
 int main(){
     input();
-    sjf();
+    fcfs();
 
     int sumWt=0;
     int sumTat=0;

@@ -2,32 +2,43 @@
 #include <stdlib.h>
 #define procNum 10
 int choice;
-int finish[procNum], at[procNum],bt[procNum],wt[procNum],tat[procNum],name[procNum];
+int finish[procNum], at[procNum],bt[procNum],wt[procNum],tat[procNum],name[procNum],priority[procNum];
 int avg_wt, avg_tat;
-int n, time, count;
+int n, remainingBT[procNum], time, count;
 
 void input(){
     printf("\nnumber of processes: ");
     scanf("%d",&n);
     
     for(int i=0;i<n;i++){
-        int a,b;
+        int a,b,p;
         printf("\nFor process P%d enter the arrival time: ",i);
         scanf("%d",&a);
         printf("\nFor process P%d enter the bust time: ",i);
         scanf("%d",&b);
+        printf("\nFor process P%d enter the priority: ",i);
+        scanf("%d",&p);
         at[i] = a;
         bt[i] = b;
+        remainingBT[i] = b;
         name[i] = i;
+        priority[i] = p;
     }
 }
-
 
 void sort(){
     int temp;
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            if(bt[i]<bt[j]){
+            if(priority[i]<priority[j]){
+                temp = remainingBT[i];
+                remainingBT[i] = remainingBT[j];
+                remainingBT[j] = temp;
+
+                temp = priority[i];
+                priority[i] = priority[j];
+                priority[j] = temp;
+
                 temp = bt[i];
                 bt[i] = bt[j];
                 bt[j] = temp;
@@ -56,40 +67,44 @@ void sort(){
     }
 }
 
-void sjf(){
+void prior(){
     for(int i=0;i<n;i++){
         finish[i] = 0;
         wt[i] = 0;
         tat[i] = 0;
     }
     int pending = n;
+    
     for(time=0,count=0;pending>0;){
         sort();
         for(count=0;count<n;count++){
             if(finish[count]!=1 && at[count]<=time){
                 printf(" P%d ",name[count]);
-                time+=bt[count];
+                remainingBT[count]-=1;
+                time+=1;
                 for(int i=0;i<n;i++){
                     if(i==count || finish[i]==1){
                         continue;
                     }
-                    wt[i]+=bt[count];
+                    wt[i]+=1;
                 }
+            
+            if(remainingBT[count]==0){
                 pending--;
                 wt[count]-=at[count];
                 tat[count] = wt[count]+bt[count];
                 finish[count]=1;
-                bt[count]+=999;
-                break;
             }
-        }
-    }
-}
 
+            break;
+        }
+ }
+}
+}
 
 int main(){
     input();
-    sjf();
+    prior();
 
     int sumWt=0;
     int sumTat=0;
