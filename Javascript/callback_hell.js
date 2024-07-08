@@ -1,20 +1,20 @@
 //Let's understand asynchronous function
 //so the code in which we know in which order the lines of code will be executed is general code and called synchronous code
 //the code that runs at a lag parallel to other codeset is called asynchronous code and it executes after a time lag defined 
+//So, the async function doesn't go under linear flow, rather it utilizes the parallelism and runs after a lag or time wait
 
 
-///setTimeout Function is called the same
-//setTimeout(function, miliseconds);
-
-
+// Used or implemented using the setTimeout function
 //Thus, it is executed after x miliseconds
 console.log("Hellow dusht");
 setTimeout(function (){
     console.log("This will execute later")
 }, 3000);
 
+//So this function will execute the code after 3000 milisecond AND MOST IMPORTANTLY THIS WILL NOT OBSTRUCT ANY EXECUTION OCCURING IN FUNCTION STACK, IT OCCURS IN PARALLEL
 
-//mostly in websites some animation comes then content comes and then somewhere there's a waittime and that's where the this function finds usecase
+
+//mostly in websites some animation comes then content comes and then somewhere there's a wait  time and that's where the this function finds usecase
 
 
 //Callback
@@ -24,7 +24,7 @@ setTimeout(function (){
 
 
 
-function getCheese(callback){
+function getCheese(callback){ //so basically callback method is quite useful here, bascially callback function 
     console.log("Going to get some cheese!")
     setTimeout(()=> {
         const cheese = "🧀";
