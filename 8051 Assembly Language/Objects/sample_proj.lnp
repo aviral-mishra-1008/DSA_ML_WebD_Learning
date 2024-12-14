@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\16_bit_addition.obj" 
+TO ".\Objects\sample_proj" 
+PRINT(".\Listings\sample_proj.m51")
