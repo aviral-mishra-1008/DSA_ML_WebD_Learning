@@ -280,7 +280,7 @@ int main(){
         cout<<i.first<<"  "<<i.second<<endl;  //This is the procedure i.first to display the keys, and as you can see the output is always ordered i.e ascending 
     }
 
-    map.insert({7,"Shubhi"});
+    map.insert({7,""});
     cout<<"Finding 7 -> "<<map.count(7)<<endl; //checking for a key
 
     //now let's try to see how to erase elements
