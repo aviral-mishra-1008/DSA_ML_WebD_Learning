@@ -1,0 +1,22 @@
+State is the way the React holds on to some informations
+that can change over time and needs to be remembered
+
+Kind of like the stateful servers maintain the the state
+So eg: if the user has checked the dark mode then the subsequent
+movement to other pages maintain the theme as dark so basically site is maintaining a state associated with a user
+
+Hooks are used to enable actions on the page without a full reload
+basically eg: A button click performs an action, so the action trigger doesn't
+reload the page, rather it performs only the change needed'
+
+The State are preferred over variables to store the information, because
+its a feature of react an enables the re-rendering of the component or the
+part of component when a change is noticed by the React!!
+This auto-rendering on change is great!
+
+Props vs State
+Props enable passing information from parent component to child component, but
+the State actually enables to maintain state across the website irrespective of the
+inheritance hierarchy
+
+

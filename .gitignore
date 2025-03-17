@@ -1,2 +1,181 @@
+# Python
+*.py[cod]
+__pycache__/
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.venv/
+.env
+.env.*
+*.log
+
+# Django
+*.sqlite3
+migrations/
+static/
+media/
+local_settings.py
+
+# JavaScript (Node.js, React)
+node_modules/
+package-lock.json
+yarn.lock
+build/
+dist/
+.cache/
+.parcel-cache/
+coverage/
+.DS_Store # macOS specific
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnp
+.pnp.js
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.idea/
+target/
+bin/
+out/
+.gradle/
+.gradle/
+build/
+
+# C++
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+*.ilk
+*.ncb
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.userprefs
+*.dSYM/
+build/
+Debug/
+Release/
+*.log
+
+# AI/Machine Learning
+*.h5
+*.ckpt
+*.tflite
+*.pb
+*.pth
+*.onnx
+*.data-*
+*.index
+*.meta
+*.events.*
+.ipynb_checkpoints/
+.DS_Store # macOS specific
+*.model
+*.weights
+*.index
+
+# OS Specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# General Build Artifacts and Temp Files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+*.cache
+*.pyc
+*.pyo
+*.egg
+*.egg-info
+*.whl
+*.idea/workspace.xml
+*.idea/tasks.xml
+*.idea/dictionaries
+*.idea/shelf
+*.idea/modules.xml
+*.idea/vcs.xml
+*.idea/misc.xml
+*.idea/runConfigurations.xml
+*.idea/dataSources
+*.idea/dataSources.ids
+*.idea/dataSources.local
+*.idea/sqlDataSources.xml
+*.idea/dynamic.xml
+*.idea/uiDesigner.xml
+*.idea/compiler.xml
+*.idea/copyright/
+*.idea/codeStyles/
+*.idea/inspectionProfiles/
+*.idea/deploymentTargetDatabase.xml
+*.idea/gradle.xml
+*.idea/modules
+*.idea/libraries
+*.idea/artifacts
 .cph
-.vscode
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (IntelliJ, PyCharm, etc.)
+.idea/
+*.iws
+*.ipr
+*.iml
+
+# Eclipse
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.log
+*.class
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+\#*
+.*.swp
+.*.swo
+.fuse_hidden*
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
